@@ -26,30 +26,43 @@ The model is a Convolutional Neural Network (CNN) with the following architectur
 -   Pandas
 -   Scikit-learn
 
-### Installation
+### Installation & Setup
 
-1.  Clone the repository:
+1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/COVID-19-X-Ray-Detection.git](https://github.com/your-username/COVID-19-X-Ray-Detection.git)
+    git clone [https://github.com/lakshyajoshii/COVID-19-X-Ray-Detection.git](https://github.com/lakshyajoshii/COVID-19-X-Ray-Detection.git)
+    cd COVID-19-X-Ray-Detection
     ```
-2.  Install the required packages:
+
+2.  **Download the Dataset:**
+    The dataset for this project is hosted on Kaggle.
+    * **Download Link:** [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+    * Click "Download" and save the `archive.zip` file.
+
+3.  **Prepare the Dataset:**
+    * Unzip the `archive.zip` file.
+    * You will see a folder named `chest_xray`. Inside it are `train`, `test`, and `val` folders.
+    * Create a new folder named `Dataset` in the root of this project directory.
+    * Move the `train` and `val` folders from `chest_xray` into your new `Dataset` folder.
+    * The final structure should look like this:
+        ```
+        COVID-19-X-Ray-Detection/
+        ├── Dataset/
+        │   ├── Train/
+        │   └── Val/
+        ├── covid_detection.py
+        └── ... (other project files)
+        ```
+
+4.  **Install the required packages:**
     ```bash
     pip install tensorflow keras opencv-python matplotlib seaborn pandas scikit-learn
     ```
 
 ### Usage
 
-1.  **Training the Model:**
-    The `covid_detection.py` script contains the code for training the model. You will need to have the dataset structured into `Train` and `Val` directories, each with `Covid` and `Normal` subdirectories.
-
-2.  **Making Predictions:**
-    The `project.py` script can be used to make predictions on new X-ray images. Place the images you want to test in a `Prediction` folder.
-
-    To run a prediction:
-    ```python
-    python project.py
-    ```
-    The script will load the pre-trained model (`Detection_Covid_19.h5`) and predict the class of the sample images provided.
+-   **Training the Model:** The `covid_detection.py` script contains the code for training the model.
+-   **Making Predictions:** The `project.py` script can be used to make predictions on new X-ray images.
 
 ## Model Files
 
